@@ -51,6 +51,7 @@ export class EDAAppStack extends cdk.Stack {
   newImageTopic.addSubscription(
     new subs.SqsSubscription(imageProcessQueue)
   );
+  
 
  // SQS --> Lambda
   const newImageEventSource = new events.SqsEventSource(imageProcessQueue, {
